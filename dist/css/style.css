@@ -126,7 +126,7 @@ header .main-logo .logo-object {
 header .container {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.25rem;
 }
 header .container nav {
   position: absolute;
@@ -151,6 +151,7 @@ header .container nav ul {
 }
 header .container nav ul a {
   color: #475c46;
+  font-weight: 600;
 }
 @media screen and (min-width: 42.5rem) {
   header .container nav {
@@ -198,7 +199,7 @@ header .container button.toggleImage .menu_open {
     position: relative;
     margin-top: 20px;
   }
-  header button {
+  header .container button {
     display: none;
   }
 }
