@@ -123,7 +123,12 @@ header .main-logo .logo-object {
   width: 1.125rem;
   height: 1.125rem;
 }
-header nav {
+header .container {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+header .container nav {
   position: absolute;
   top: 0.25rem;
   right: 0.125rem;
@@ -131,23 +136,24 @@ header nav {
   background-color: rgb(238, 238, 143);
   border-radius: 10px;
   padding: 20px 15px;
+  z-index: 1;
   display: none;
 }
-header nav.toggleBtn {
+header .container nav.toggleBtn {
   display: initial;
 }
-header nav ul {
+header .container nav ul {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 1.5625rem;
   align-items: center;
 }
-header nav ul a {
+header .container nav ul a {
   color: #475c46;
 }
 @media screen and (min-width: 42.5rem) {
-  header nav {
+  header .container nav {
     position: relative;
     top: 0rem;
     right: 0rem;
@@ -157,7 +163,7 @@ header nav ul a {
     padding: 0;
     display: flex;
   }
-  header nav ul {
+  header .container nav ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -165,24 +171,26 @@ header nav ul a {
     align-items: center;
   }
 }
-header button {
+header .container button {
+  display: flex;
+  align-items: center;
   color: #085c11;
   background-color: transparent;
   border: none;
   outline: none;
-  z-index: 2;
+  z-index: 8;
 }
-header button .material-symbols-outlined {
+header .container button .material-symbols-outlined {
   font-size: 50px;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
-header button .close {
+header .container button .close {
   display: none;
 }
-header button.toggleImage .close {
+header .container button.toggleImage .close {
   display: initial;
 }
-header button.toggleImage .menu_open {
+header .container button.toggleImage .menu_open {
   display: none;
 }
 @media screen and (min-width: 42.5rem) {
@@ -559,9 +567,46 @@ footer .second-footer-section .social-media-logos .media-icon:is(:focus, :hover)
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
 }
 .bounce-animation {
   animation: bounce 3s ease-in-out infinite;
+}
+
+.container .dark-mode-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 5rem;
+  border: 0.125rem solid #26582a;
+  border-radius: 1.25rem;
+  padding: 0.4375rem;
+  overflow: hidden;
+  background-color: rgba(126, 130, 120, 0.489);
+}
+.container .dark-mode-container .navigator {
+  position: absolute;
+  left: 0.125rem;
+  top: 0.125rem;
+  z-index: -1;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  border-radius: 50%;
+  background-color: #475c46;
+  transform: translateX(0px);
+  transition: all 0.4s ease;
+}
+.container .dark-mode-container.navigate .navigator {
+  transform: translateX(36px);
+  transition: all 0.4s ease;
+}
+
+.color {
+  transition: all 0.25s ease;
+}
+
+body {
+  transition: all 0.25s ease;
 }/*# sourceMappingURL=style.css.map */

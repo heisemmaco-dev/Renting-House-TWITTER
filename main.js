@@ -59,3 +59,29 @@ function reveal() {
     }
   }
 }
+
+//dark mode function
+
+let darkModeContainer = document.querySelector(".dark-mode-container");
+let lightModeIcon = darkModeContainer.querySelector(".light_mode");
+let darkModeIcon = darkModeContainer.querySelector(".dark_mode");
+let textcolor = document.querySelectorAll(".color");
+let body = document.querySelector("body");
+
+console.log(textcolor);
+
+darkModeIcon.addEventListener("click", () => {
+  darkModeContainer.classList.add("navigate");
+  textcolor.forEach((text) => {
+    text.style.color = "white";
+  });
+  body.style.backgroundColor = "black";
+});
+
+lightModeIcon.addEventListener("click", () => {
+  darkModeContainer.classList.remove("navigate");
+  textcolor.forEach((text) => {
+    text.style.color = "#141e15";
+  });
+  body.style.backgroundColor = "white";
+});
