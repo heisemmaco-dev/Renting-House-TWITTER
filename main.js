@@ -23,7 +23,6 @@ menuBtn.addEventListener("click", () => {
 // tha auchor tag, i want to disappear when the anyone being clicked
 
 let aTag = document.querySelectorAll(".menuNav a");
-console.log(aTag);
 
 aTag.forEach((anchorTAg) => {
   anchorTAg.addEventListener("click", () => {
@@ -40,11 +39,13 @@ aTag.forEach((anchorTAg) => {
   });
 });
 
-//animation funtion
+//animation function
 window.addEventListener("scroll", reveal);
 
 function reveal() {
   let reveals = document.querySelectorAll(".when");
+  let scrollTop = document.querySelector(".scroll-top");
+  let objectForScroll = document.querySelector(".scroll");
 
   for (let i = 0; i < reveals.length; i++) {
     let windowheight = window.innerHeight;
@@ -57,6 +58,15 @@ function reveal() {
     } else {
       reveals[i].classList.remove("active");
     }
+
+    let scrollOn = objectForScroll.getBoundingClientRect().top;
+    let display = 100;
+
+    if (scrollOn < windowheight - display) {
+      scrollTop.classList.add("turnon");
+    } else {
+      scrollTop.classList.remove("turnon");
+    }
   }
 }
 
@@ -67,8 +77,6 @@ let lightModeIcon = darkModeContainer.querySelector(".light_mode");
 let darkModeIcon = darkModeContainer.querySelector(".dark_mode");
 let textcolor = document.querySelectorAll(".color");
 let body = document.querySelector("body");
-
-console.log(textcolor);
 
 darkModeIcon.addEventListener("click", () => {
   darkModeContainer.classList.add("navigate");
